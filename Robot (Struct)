@@ -40,7 +40,11 @@ int main(){
         s3 = lleituras.ss3;
 
         struct motores mmotores;
-        mmotores == IA(s1,s2,s3);
+        mmotores == IA(s1, s2, s3);
+
+        m1 = mmotores.mm1;
+        m2 = mmotores.mm2;
+
         Motor(mm1,mm2);
 
     }
