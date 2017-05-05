@@ -31,9 +31,13 @@ void Motor(int mm1, int mm2);
 int main(){
 
     while(1){
-        LeSensores();
-        IA(int ss1, int ss2, int ss3);
-        Motor();
+        struct sensores lleituras;
+        lleituras = LeSensores();
+
+        struct motores mmotores
+        mmotores == IA(ss1,ss2,ss3);
+        Motor(mm1,mm2);
+
     }
     return 0;
 }
@@ -88,43 +92,50 @@ struct sensores LeSensores(){
     leituras.ss1 = s1
     leituras.ss2 = s2
     leituras.ss3 = s3
-    return sensores
+    return leituras
     }
 }
 
-struct IA(){
-    if(s1==0 && s2==0 && s3==0){
+struct motores IA(){
+
+    int m1,m2;
+    struct motores mmotores;
+
+    if(ss1==0 && ss2==0 && ss3==0){
         m1=1;
         m2=1;
     }
-    else if(s1==0 && s2==0 && s3==1){
+    else if(ss1==0 && ss2==0 && ss3==1){
         m1=0;
         m2=1;
     }
-    else if(s1==0 && s2==1 && s3==0){
+    else if(ss1==0 && ss2==1 && ss3==0){
         m1=1;
         m2=0;
         }
-    else if(s1==0 && s2==1 && s3==1){
+    else if(ss1==0 && ss2==1 && ss3==1){
         m1=0;
         m2=1;
     }
-    else if(s1==1 && s2==0 && s3==0){
+    else if(ss1==1 && ss2==0 && ss3==0){
         m1=1;
         m2=0;
     }
-    else if(s1==1 && s2==0 && s3==1){
+    else if(ss1==1 && ss2==0 && ss3==1){
         m1=1;
         m2=1;
     }
-    else if(s1==1 && s2==1 && s3==0){
+    else if(ss1==1 && ss2==1 && ss3==0){
         m1=1;
         m2=0;
     }
-    else if(s1==1 && s2==1 && s3==1){
+    else if(ss1==1 && ss2==1 && ss3==1){
         m1=0;
         m2=1;
     }
+    mmotores.mm1 = m1;
+    mmotores.mm2 = m2;
+    return mmotores;
 }
 
 void Motor(){
