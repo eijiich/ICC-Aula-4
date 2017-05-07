@@ -28,17 +28,13 @@ int main(){
     while (1){
 
         ss lleituras;
-        ss LeSensores();
         lleituras = LeSensores();
 
         sss1 = lleituras.s1;
         sss2 = lleituras.s2;
         sss3 = lleituras.s3;
 
-        Sleep(500);
-
         mm mmmotor;
-        mm IA(sss1, sss2, sss3);
         mmmotor = IA(sss1, sss2, sss3);
 
         mmm1 = mmmotor.m1;
@@ -158,6 +154,7 @@ mm IA(int sss1, int sss2, int sss3){
 
 void Motor(int ssss1, int ssss2, int ssss3, int mmm1, int mmm2){
     printf("\r s1=%d s2=%d s3=%d      m1=%d m2=%d",ssss1, ssss2, ssss3, mmm1, mmm2);
+    Sleep(420);
 }
 
 
