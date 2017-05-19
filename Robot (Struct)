@@ -13,11 +13,8 @@ struct motors{
     int m2;
 };
 
-typedef struct sensors ss;
-typedef struct motors mm;
-
-ss LeSensores();
-mm IA(int sss1, int sss2, int sss3);
+struct sensors LeSensores();
+struct motors IA(int sss1, int sss2, int sss3);
 void Motor(int ssss1, int ssss2, int ssss3, int mmm1, int mmm2);
 
 
@@ -27,14 +24,14 @@ int main(){
 
     while (1){
 
-        ss lleituras;
+        struct sensors lleituras;
         lleituras = LeSensores();
 
         sss1 = lleituras.s1;
         sss2 = lleituras.s2;
         sss3 = lleituras.s3;
 
-        mm mmmotor;
+        struct motors mmmotor;
         mmmotor = IA(sss1, sss2, sss3);
 
         mmm1 = mmmotor.m1;
@@ -47,9 +44,9 @@ int main(){
 }
 
 
-ss LeSensores(){
+struct sensors LeSensores(){
     int ss1, ss2, ss3;
-    ss leituras;
+    struct sensors leituras;
     char ch;
     if(kbhit()){
         ch=getch();
@@ -108,10 +105,10 @@ ss LeSensores(){
 }
 
 
-mm IA(int sss1, int sss2, int sss3){
+struct motors IA(int sss1, int sss2, int sss3){
 
     int mm1, mm2;
-    mm mmotor;
+    struct motors mmotor;
 
     if(sss1==0 && sss2==0 && sss3==0){
         mm1=1;
